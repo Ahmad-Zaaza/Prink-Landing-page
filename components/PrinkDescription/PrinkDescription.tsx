@@ -22,8 +22,8 @@ const PrinkDescription = () => {
             <Image
               layout="intrinsic"
               src={selfieGirl}
-              width={526}
-              height={411}
+              width={400}
+              height={267}
               alt="Girl taking a selfie infront of clothes"
             />
             <BottomSectionImageWrapper>
@@ -93,12 +93,19 @@ const BottomSection = styled.div`
 `;
 const TopSectionImageWrapper = styled.div`
   flex: 1 300000 250px;
-  max-width: 350px;
+  max-width: 400px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media ${(p) => p.theme.queries.tabletAndUp} {
+    justify-content: flex-end;
+    max-width: revert;
+  }
 `;
 const BottomSectionImageWrapper = styled.div`
   position: absolute;
-  left: 0;
+  left: 100px;
   top: 220px;
   display: none;
   transform: translateX(-100px);

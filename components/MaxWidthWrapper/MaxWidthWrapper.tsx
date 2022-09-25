@@ -13,7 +13,7 @@ const MaxWidthWrapper: React.FC<{ children: React.ReactNode }> = ({
 export default MaxWidthWrapper;
 
 const Wrapper = styled.div`
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 24px;
   ${HeroWrapper} & {
