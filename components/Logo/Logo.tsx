@@ -1,15 +1,17 @@
 import Image, { ImageProps } from "next/image";
 import styled from "styled-components";
 import blackColored from "../../assets/blackColoredLogo.png";
+import whiteColored from "../../assets/whiteColoredLogo.png";
 
 interface IProps extends Omit<ImageProps, "src"> {
-  variant: "black-colored";
+  variant: "black-colored" | 'white-colored';
   withSubtitle?: boolean;
 }
 
 const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
   const src = {
     "black-colored": blackColored,
+    "white-colored": whiteColored,
   };
   if (withSubtitle) {
     return (
