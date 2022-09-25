@@ -1,13 +1,12 @@
 import type { NextPage } from "next";
-
-import styled from "styled-components";
+import Hero from "../components/Hero/Hero";
 
 const Home: NextPage = () => {
-  return <Wrapper>Hello</Wrapper>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Home;
-
-const Wrapper = styled.div`
-  background-color: red;
-`;
