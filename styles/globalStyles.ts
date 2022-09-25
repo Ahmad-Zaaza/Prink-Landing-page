@@ -64,13 +64,15 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* CSS Variables */
 :root {
---color-knack-primary: ${COLORS.knackPrimary};
 --color-background:${COLORS.background};
 --color-text:${COLORS.text};
 --color-primary:${COLORS.primary};
 --color-primary-background:${COLORS.primaryBackground};
---color-secondary:${COLORS.knackSecondary};
-/* --color-tertiary:${COLORS.knackSecondary}; */
+--color-on-primary:${COLORS.onPrimary};
+--color-secondary:${COLORS.secondary};
+--color-secondary-background:${COLORS.secondaryBackground};
+--color-on-secondary:${COLORS.onSecondary};
+
 --color-alert:${COLORS.alert};
 --color-success:${COLORS.success};
 --color-success-background:${COLORS.successBackground};
@@ -109,6 +111,8 @@ a {
 
 button {
   text-align: initial ;
+  box-shadow:none ;
+  border:none;
 }
 
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import JoinUsForm from "../JoinUsForm/JoinUsForm";
 import Logo from "../Logo/Logo";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 
@@ -17,6 +18,7 @@ const Hero = () => {
             <Subtitle>
               A new social media platform dedicated to fashion.
             </Subtitle>
+            <JoinUsForm/>
           </LeftColumn>
           <RightColumn></RightColumn>
         </ContentWrapper>
