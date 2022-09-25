@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   border: 1px solid var(--color-border);
-  flex: 1 1 70%;
+  flex: 1 1 300px;
   margin-bottom: 16px;
   height: 50px;
   padding: 19px 20px 18px 20px;

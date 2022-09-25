@@ -1,6 +1,8 @@
+import Image from "next/image";
 import styled from "styled-components";
 import JoinUsForm from "../JoinUsForm/JoinUsForm";
 import Logo from "../Logo/Logo";
+import mockup from "../../assets/hero-mockup.png";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import { HeroWrapper } from "./HeroWrapper";
 
@@ -23,7 +25,9 @@ const Hero = () => {
             </Subtitle>
             <JoinUsForm />
           </LeftColumn>
-          <RightColumn></RightColumn>
+          <RightColumn>
+            <Image src={mockup} alt='Prink app phone mockup' />
+          </RightColumn>
         </ContentWrapper>
       </MaxWidthWrapper>
     </HeroWrapper>
@@ -31,16 +35,6 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const GridWrapper = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
-  block-size: 100%;
-  gap: 24px;
-  /* @media ${(p) => p.theme.queries.tabletAndUp} {
-    gap: 16px;
-  } */
-`;
 
 const TopSection = styled.div`
   display: flex;
@@ -54,7 +48,6 @@ const ContentWrapper = styled.div`
   max-block-size: 100%;
   justify-content: center;
   align-items: flex-start;
-  /* flex-direction: column; */
 
   @media ${(p) => p.theme.queries.tabletAndUp} {
     align-items: center;
@@ -65,9 +58,14 @@ const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 1 0 350px;
 `;
 const RightColumn = styled.div`
+  flex: 1 300000 350px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h1`

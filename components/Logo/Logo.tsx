@@ -15,10 +15,10 @@ const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
     return (
       <div>
         <Image
-          //   layout="intrinsic"
+          layout="intrinsic"
           alt="Prink Logo"
-          height={40}
-          width={100}
+          height={50}
+          width={115}
           {...delegated}
           src={src[variant]}
         />
@@ -30,7 +30,7 @@ const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
     <Image
       //   layout="intrinsic"
       alt="Prink Logo"
-      height={50}
+      height={40}
       width={100}
       {...delegated}
       src={src[variant]}
