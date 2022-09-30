@@ -39,8 +39,9 @@ const PrinkDescription = () => {
         </TopSection>
         <BottomSection>
           <Text>
-            You would be able to record a video of your outfit, publish it, and
-            get feedback on it. You can also get many outfits inspirations.
+            You would be able to create videos of your outfit, upload and share
+            it with others, RATE and LIKE styles from other users, and find
+            inspiration for your next style.
           </Text>
           <BottomSectionFakeWrapper></BottomSectionFakeWrapper>
         </BottomSection>
