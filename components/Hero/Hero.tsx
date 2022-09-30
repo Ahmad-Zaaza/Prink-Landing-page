@@ -58,7 +58,7 @@ const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  flex: 1 0 340px;
+  flex: 1 0 350px;
 `;
 const RightColumn = styled.div`
   flex: 1 300000 350px;
