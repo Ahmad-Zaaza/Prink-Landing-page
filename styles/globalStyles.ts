@@ -67,6 +67,7 @@ p, h1, h2, h3, h4, h5, h6 {
 --color-background:${COLORS.background};
 --color-text:${COLORS.text};
 --color-primary:${COLORS.primary};
+--color-primary-hover:${COLORS.primaryHover};
 --color-primary-background:${COLORS.primaryBackground};
 --color-on-primary:${COLORS.onPrimary};
 --color-secondary:${COLORS.secondary};

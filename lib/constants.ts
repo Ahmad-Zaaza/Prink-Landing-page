@@ -1,6 +1,7 @@
 export const COLORS = {
   primary: "hsl(350deg, 100%, 72%)",
   primaryBackground: "hsla(350deg, 100%, 72%, 0.1)",
+  primaryHover: "hsl(350deg, 68%, 60%)",
   secondary: "hsl(296deg, 24%, 52%)",
   secondaryBackground: "background: hsla(296deg, 24%, 52%, 0.1)",
   text: "hsl(222deg, 22%, 5%)",

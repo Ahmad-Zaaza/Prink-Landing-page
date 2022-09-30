@@ -15,7 +15,7 @@ const Hero = () => {
         </TopSection>
         <ContentWrapper>
           <LeftColumn>
-            <Title>Ready to unleash the Fashion ?</Title>
+            <Title>Ready to unleash Fashion ?</Title>
             <Subtitle>
               Create Fashion Videos, discover latest trends and inspire others
               follow you.
@@ -58,7 +58,7 @@ const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  flex: 1 0 350px;
+  flex: 1 0 340px;
 `;
 const RightColumn = styled.div`
   flex: 1 300000 350px;

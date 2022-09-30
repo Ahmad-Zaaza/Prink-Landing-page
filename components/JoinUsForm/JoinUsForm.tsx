@@ -32,5 +32,10 @@ const Button = styled.button`
   color: var(--color-on-primary);
   font-weight: 700;
   flex: 1 1 200px;
+  cursor: pointer;
   text-align: center;
+  transition: background-color 150ms ease;
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
 `;
