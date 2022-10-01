@@ -18,7 +18,6 @@ export default JoinUsForm;
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center;s */
 `;
 
 const Input = styled.input`
@@ -26,9 +25,11 @@ const Input = styled.input`
   flex: 1 1 300px;
   margin-bottom: 16px;
   height: 50px;
+  border-radius: 6px;
   padding: 19px 20px 18px 20px;
 `;
 const Button = styled.button`
+  border-radius: 6px;
   margin-bottom: 16px;
   font-size: ${20 / 16}rem;
   height: 50px;
