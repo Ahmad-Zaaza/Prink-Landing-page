@@ -2,8 +2,11 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import Logo from "../Logo";
+import mockup from "../../assets/featuresImage.png";
+
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import { PrinkFeaturesWrapper } from "./PrinkFeaturesWrapper";
+import PrinkFeature from "./PrinkFeature";
 
 const PrinkFeatures = () => {
   return (
@@ -14,6 +17,39 @@ const PrinkFeatures = () => {
           What is in <Logo variant="white-colored" /> ?
         </Title>
         <Subtitle>Lets Describe Included Features in Our App</Subtitle>
+
+        <ContentWrapper>
+          <LeftColumn>
+            <Image
+              // height={569}
+              // width={445}
+              src={mockup}
+              alt="Prink app phone mockup"
+            />
+          </LeftColumn>
+          <RightColumn>
+            <PrinkFeature
+              title="Rate, Comment and Share"
+              subtitle="Rate the style of your friends, give feedback, and share styles with them."
+              iconId="like"
+            />
+            <PrinkFeature
+              title="Find What Suits You"
+              subtitle="You can search by body type, favorite color, or most popular fashion"
+              iconId="search-with-heart"
+            />
+            <PrinkFeature
+              title="Follow Fashionistas"
+              subtitle="You can follow your friends, fashionestas, and quote ideas for your style today."
+              iconId="friends"
+            />
+            <PrinkFeature
+              title="Tips & Tricks"
+              subtitle="You can find tips on wearing items in your closest in different ways.  "
+              iconId="tips-and-tricks"
+            />
+          </RightColumn>
+        </ContentWrapper>
       </MaxWidthWrapper>
     </PrinkFeaturesWrapper>
   );
@@ -27,13 +63,15 @@ const Background = styled.div`
   left: 0;
   right: 0;
   z-index: -1;
-  background-image: url("./featuresBackground.svg");
+  background-image: url("./mobileBackground.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 225px;
+  transform: translateY(-160px);
+  height: 600px;
   @media ${(p) => p.theme.queries.tabletAndUp} {
-    height: 400px;
-
+    background-image: url("./featuresBackground.svg");
+    transform: translateY(0px);
+    height: 600px;
   }
 `;
 const Title = styled.h2`
@@ -56,5 +94,38 @@ const Subtitle = styled.p`
   @media ${(p) => p.theme.queries.tabletAndUp} {
     font-size: ${22 / 16}rem;
     line-height: 25px;
+  }
+`;
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 120px;
+  flex-direction: column;
+
+  @media ${(p) => p.theme.queries.desktopAndUp} {
+    align-items: center;
+    flex-direction: row;
+  }
+`;
+
+const LeftColumn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 250px;
+`;
+const RightColumn = styled.div`
+  flex: 1 300000 350px;
+  position: relative;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  @media ${(p) => p.theme.queries.tabletAndUp} {
+    gap: 48px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+  @media ${(p) => p.theme.queries.desktopAndUp} {
+    grid-template-columns: 1fr;
   }
 `;
