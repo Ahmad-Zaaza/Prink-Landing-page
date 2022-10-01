@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  flex-basis: 100px;
+  /* flex-basis: 100px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,9 +51,11 @@ const TextWrapper = styled.div`
 const Title = styled.h6`
   font-size: ${16 / 16}rem;
   line-height: 18px;
+  height:36px;
   /* text-align: center; */
   margin-bottom: 8px;
   @media ${(p) => p.theme.queries.tabletAndUp} {
+    height:auto;
     font-size: ${20 / 16}rem;
     line-height: 24px;
   }

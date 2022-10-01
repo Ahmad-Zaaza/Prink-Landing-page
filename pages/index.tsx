@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         <Navbar />
         <Hero />
       </HeroWrapper>
-        <PrinkDescription />
+      <PrinkDescription />
       <PrinkFeatures />
     </>
   );
@@ -44,4 +44,7 @@ export default Home;
 const HeroWrapper = styled.div`
   min-height: 100%;
   background-image: url("./mainpattern.png");
+  background-size: contain;
+
+  background-repeat: repeat;
 `;

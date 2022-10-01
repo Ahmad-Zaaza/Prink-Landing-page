@@ -14,16 +14,15 @@ const MaxWidthWrapper: React.FC<{ children: React.ReactNode }> = ({
 export default MaxWidthWrapper;
 
 const Wrapper = styled.div`
-  max-width: 1250px;
+  max-width: 1366px;
   margin: 0 auto;
   padding: 0 24px;
   ${HeroWrapper} & {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    min-block-size: 100%;
+    display: flex;
+    align-items: center;
     gap: 24px;
     @media ${(p) => p.theme.queries.tabletAndUp} {
-      gap: 0px;
+      gap: 0;
     }
   }
   ${PrinkDescriptionWrapper} & {
@@ -34,7 +33,7 @@ const Wrapper = styled.div`
     }
   }
   ${PrinkFeaturesWrapper} & {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 80px;
     @media ${(p) => p.theme.queries.tabletAndUp} {
       padding-top: 30px;

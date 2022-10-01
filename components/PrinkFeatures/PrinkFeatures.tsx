@@ -99,11 +99,12 @@ const Subtitle = styled.p`
 const ContentWrapper = styled.div`
   display: flex;
   gap: 24px;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 120px;
   flex-direction: column;
 
   @media ${(p) => p.theme.queries.desktopAndUp} {
+    gap: 56px;
     align-items: center;
     flex-direction: row;
   }
@@ -113,13 +114,14 @@ const LeftColumn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 0 250px;
+  flex: 1 0 350px;
 `;
 const RightColumn = styled.div`
-  flex: 1 300000 350px;
+  flex: 1 0 350px;
   position: relative;
   display: grid;
   gap: 24px;
+  align-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   @media ${(p) => p.theme.queries.tabletAndUp} {
     gap: 48px;
