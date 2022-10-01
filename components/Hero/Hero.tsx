@@ -18,7 +18,7 @@ const Hero = () => {
             <Title>Ready to unleash Fashion ?</Title>
             <Subtitle>
               Create Fashion Videos, discover latest trends and inspire others
-              follow you.
+              who follows you.
             </Subtitle>
             <Subtitle>
               A new social media platform dedicated to fashion.
