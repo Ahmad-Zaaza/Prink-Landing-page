@@ -70,7 +70,7 @@ const Background = styled.div`
   height: 600px;
   @media ${(p) => p.theme.queries.tabletAndUp} {
     background-image: url("./featuresBackground.svg");
-    transform: translateY(0px);
+    transform: translateY(-40px);
     height: 600px;
   }
 `;

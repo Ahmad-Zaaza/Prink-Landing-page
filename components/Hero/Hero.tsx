@@ -10,9 +10,6 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <MaxWidthWrapper>
-        <TopSection>
-          <Logo withSubtitle variant="black-colored" />
-        </TopSection>
         <ContentWrapper>
           <LeftColumn>
             <Title>Ready to unleash Fashion ?</Title>
@@ -26,7 +23,7 @@ const Hero = () => {
             <JoinUsForm />
           </LeftColumn>
           <RightColumn>
-            <Image src={mockup} alt='Prink app phone mockup' />
+            <Image src={mockup} alt="Prink app phone mockup" />
           </RightColumn>
         </ContentWrapper>
       </MaxWidthWrapper>
@@ -35,11 +32,6 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const TopSection = styled.div`
-  display: flex;
-  padding-top: 24px;
-`;
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -62,10 +54,18 @@ const LeftColumn = styled.div`
 `;
 const RightColumn = styled.div`
   flex: 1 300000 350px;
+  max-width: 500px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 350px;
+  @media ${(p) => p.theme.queries.tabletAndUp} {
+    max-width: 400px;
+  }
+  @media ${(p) => p.theme.queries.desktopAndUp} {
+    max-width: none;
+  }
 `;
 
 const Title = styled.h1`

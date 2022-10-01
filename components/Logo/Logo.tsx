@@ -4,11 +4,15 @@ import blackColored from "../../assets/blackColoredLogo.png";
 import whiteColored from "../../assets/whiteColoredLogo.png";
 
 interface IProps extends Omit<ImageProps, "src"> {
-  variant: "black-colored" | 'white-colored';
+  variant: "black-colored" | "white-colored";
   withSubtitle?: boolean;
+  /**
+   * @default 115
+   */
+  size?: number;
 }
 
-const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
+const Logo = ({ variant, withSubtitle, size = 115, ...delegated }: IProps) => {
   const src = {
     "black-colored": blackColored,
     "white-colored": whiteColored,
@@ -19,8 +23,8 @@ const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
         <Image
           layout="intrinsic"
           alt="Prink Logo"
-          height={50}
-          width={115}
+          height={size / 2.3}
+          width={size}
           {...delegated}
           src={src[variant]}
         />
@@ -32,8 +36,8 @@ const Logo = ({ variant, withSubtitle, ...delegated }: IProps) => {
     <Image
       //   layout="intrinsic"
       alt="Prink Logo"
-      height={40}
-      width={100}
+      height={size / 2.3}
+      width={size}
       {...delegated}
       src={src[variant]}
     />
