@@ -21,29 +21,34 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 24px;
-    @media ${(p) => p.theme.queries.tabletAndUp} {
+    @media ${p => p.theme.queries.tabletAndUp} {
       gap: 0;
     }
   }
   ${PrinkDescriptionWrapper} & {
     padding-top: 80px;
     padding-bottom: 100px;
-    @media ${(p) => p.theme.queries.tabletAndUp} {
+    @media ${p => p.theme.queries.tabletAndUp} {
       padding-bottom: 120px;
     }
   }
   ${PrinkFeaturesWrapper} & {
     padding-top: 0;
     padding-bottom: 80px;
-    @media ${(p) => p.theme.queries.tabletAndUp} {
+    @media ${p => p.theme.queries.tabletAndUp} {
       padding-top: 30px;
     }
   }
   ${FooterWrapper} & {
-    padding-top: 0;
+    padding-top: 80px;
     padding-bottom: 80px;
-    @media ${(p) => p.theme.queries.tabletAndUp} {
-      padding-top: 30px;
+    max-width: 960px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @media ${p => p.theme.queries.tabletAndUp} {
+      gap: 48px;
     }
   }
 `;

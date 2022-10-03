@@ -29,12 +29,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   @media ${(p) => p.theme.queries.desktopAndUp} {
+    gap: 24px;
     flex-direction: row;
   }
 `;
 
 const IconWrapper = styled.div`
-  /* flex-basis: 100px; */
   display: flex;
   align-items: center;
   justify-content: center;

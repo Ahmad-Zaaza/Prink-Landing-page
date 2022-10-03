@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar";
 import PrinkDescription from "../components/PrinkDescription";
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
       </HeroWrapper>
       <PrinkDescription />
       <PrinkFeatures />
+      <Footer />
     </>
   );
 };
@@ -45,6 +47,5 @@ const HeroWrapper = styled.div`
   min-height: 100%;
   background-image: url("./mainpattern.png");
   background-size: contain;
-
   background-repeat: repeat;
 `;

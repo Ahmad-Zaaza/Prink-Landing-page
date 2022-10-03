@@ -31,7 +31,7 @@ const PrinkFeatures = () => {
             />
             <PrinkFeature
               title="Find What Suits You"
-              subtitle="Browse by body type, favorite color, or most popular fashion"
+              subtitle="Browse by body type, favorite color, or most popular fashion."
               iconId="search-with-heart"
             />
             <PrinkFeature
