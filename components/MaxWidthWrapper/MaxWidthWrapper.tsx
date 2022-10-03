@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { FooterWrapper } from "../Footer/FooterWrapper";
 import { HeroWrapper } from "../Hero/HeroWrapper";
 import { PrinkDescriptionWrapper } from "../PrinkDescription/PrinkDescriptionWrapper";
 import { PrinkFeaturesWrapper } from "../PrinkFeatures/PrinkFeaturesWrapper";
-// import { Wrapper as HeroWrapper } from "../Hero";
 
 const MaxWidthWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -33,6 +33,13 @@ const Wrapper = styled.div`
     }
   }
   ${PrinkFeaturesWrapper} & {
+    padding-top: 0;
+    padding-bottom: 80px;
+    @media ${(p) => p.theme.queries.tabletAndUp} {
+      padding-top: 30px;
+    }
+  }
+  ${FooterWrapper} & {
     padding-top: 0;
     padding-bottom: 80px;
     @media ${(p) => p.theme.queries.tabletAndUp} {

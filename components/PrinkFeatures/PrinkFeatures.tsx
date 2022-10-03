@@ -14,18 +14,14 @@ const PrinkFeatures = () => {
       <Background />
       <MaxWidthWrapper>
         <Title>
-          What is in {'  '}<Logo size={90} variant="white-colored" /> ?
+          What is in {"  "}
+          <Logo size={90} variant="white-colored" /> ?
         </Title>
         <Subtitle>Lets Describe Included Features in Our App</Subtitle>
 
         <ContentWrapper>
           <LeftColumn>
-            <Image
-              // height={569}
-              // width={445}
-              src={mockup}
-              alt="Prink app phone mockup"
-            />
+            <Image src={mockup} alt="Prink app phone mockup" />
           </LeftColumn>
           <RightColumn>
             <PrinkFeature
@@ -35,17 +31,17 @@ const PrinkFeatures = () => {
             />
             <PrinkFeature
               title="Find What Suits You"
-              subtitle="You can search by body type, favorite color, or most popular fashion"
+              subtitle="Browse by body type, favorite color, or most popular fashion"
               iconId="search-with-heart"
             />
             <PrinkFeature
               title="Follow Fashionistas"
-              subtitle="You can follow your friends, fashionistas, and quote ideas for your style today."
+              subtitle="Follow your friends, fashionistas, and quote ideas for your style today."
               iconId="friends"
             />
             <PrinkFeature
               title="Tips & Tricks"
-              subtitle="You can find tips on wearing items in your closest in different ways."
+              subtitle="Explore tips on wearing items in your closest in different ways."
               iconId="tips-and-tricks"
             />
           </RightColumn>
@@ -68,7 +64,7 @@ const Background = styled.div`
   background-size: cover;
   transform: translateY(-160px);
   height: 600px;
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     background-image: url("./featuresBackground.svg");
     transform: translateY(-40px);
     height: 650px;
@@ -80,7 +76,7 @@ const Title = styled.h2`
   color: var(--color-on-secondary);
   text-align: center;
   margin-bottom: 24px;
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     font-size: ${40 / 16}rem;
     line-height: 60px;
   }
@@ -91,7 +87,7 @@ const Subtitle = styled.p`
   color: var(--color-on-secondary);
   text-align: center;
 
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     font-size: ${22 / 16}rem;
     line-height: 25px;
   }
@@ -103,7 +99,7 @@ const ContentWrapper = styled.div`
   margin-top: 120px;
   flex-direction: column;
 
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.desktopAndUp} {
     gap: 56px;
     align-items: center;
     flex-direction: row;
@@ -123,11 +119,11 @@ const RightColumn = styled.div`
   gap: 24px;
   align-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     gap: 48px;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
   }
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.desktopAndUp} {
     grid-template-columns: 1fr;
   }
 `;
