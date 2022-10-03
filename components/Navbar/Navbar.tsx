@@ -2,20 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../Logo";
 import MaxWidthWrapper from "../MaxWidthWrapper";
+import SocialLinks from "../SocialLinks";
+import { NavbarWrapper } from "./NavbarWrapper";
 
 const Navbar = () => {
   return (
-    <Wrapper>
-      <MaxWidthWrapper>
+    <MaxWidthWrapper>
+      <NavbarWrapper>
         <Logo size={100} withSubtitle variant="black-colored" />
-      </MaxWidthWrapper>
-    </Wrapper>
+        <SocialLinks />
+      </NavbarWrapper>
+    </MaxWidthWrapper>
   );
 };
 
 export default Navbar;
-
-const Wrapper = styled.div`
-  /* display: flex; */
-  padding: 16px 0;
-`;

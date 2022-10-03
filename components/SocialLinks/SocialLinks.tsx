@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Icon from "../Icon";
+import { NavbarWrapper } from "../Navbar/NavbarWrapper";
 
 interface IProps {
   /**
@@ -32,7 +33,14 @@ export default SocialLinks;
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 24px;
+  ${NavbarWrapper} & {
+    display: none;
+    @media ${p => p.theme.queries.tabletAndUp} {
+      display: inherit;
+    }
+  }
 `;
 
 const SocialLink = styled.a.attrs(() => ({

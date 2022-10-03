@@ -30,10 +30,10 @@ const Home: NextPage = () => {
           content="https://example.com/images/cool-page.jpg"
         /> */}
       </Head>
-      <HeroWrapper>
+      <MainBackground>
         <Navbar />
         <Hero />
-      </HeroWrapper>
+      </MainBackground>
       <PrinkDescription />
       <PrinkFeatures />
       <Footer />
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const HeroWrapper = styled.div`
+const MainBackground = styled.div`
   min-height: 100%;
   background-image: url("./mainpattern.png");
   background-size: contain;
