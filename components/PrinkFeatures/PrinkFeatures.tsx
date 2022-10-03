@@ -14,7 +14,7 @@ const PrinkFeatures = () => {
       <Background />
       <MaxWidthWrapper>
         <Title>
-          What is in <Logo variant="white-colored" /> ?
+          What is in {'  '}<Logo size={90} variant="white-colored" /> ?
         </Title>
         <Subtitle>Lets Describe Included Features in Our App</Subtitle>
 
@@ -40,12 +40,12 @@ const PrinkFeatures = () => {
             />
             <PrinkFeature
               title="Follow Fashionistas"
-              subtitle="You can follow your friends, fashionestas, and quote ideas for your style today."
+              subtitle="You can follow your friends, fashionistas, and quote ideas for your style today."
               iconId="friends"
             />
             <PrinkFeature
               title="Tips & Tricks"
-              subtitle="You can find tips on wearing items in your closest in different ways.  "
+              subtitle="You can find tips on wearing items in your closest in different ways."
               iconId="tips-and-tricks"
             />
           </RightColumn>
@@ -71,7 +71,7 @@ const Background = styled.div`
   @media ${(p) => p.theme.queries.tabletAndUp} {
     background-image: url("./featuresBackground.svg");
     transform: translateY(-40px);
-    height: 600px;
+    height: 650px;
   }
 `;
 const Title = styled.h2`

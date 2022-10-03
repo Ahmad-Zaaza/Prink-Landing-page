@@ -79,9 +79,10 @@ const TopSection = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 36px;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin-bottom: 36px;
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.laptopAndUp} {
+    flex-direction: row;
     margin-bottom: 0;
   }
 `;
@@ -90,7 +91,12 @@ const BottomSection = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 36px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  @media ${p => p.theme.queries.laptopAndUp} {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
 `;
 const TopSectionImageWrapper = styled.div`
   flex: 1 300000 250px;
@@ -99,7 +105,7 @@ const TopSectionImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     justify-content: flex-end;
     max-width: revert;
   }
@@ -110,7 +116,7 @@ const BottomSectionImageWrapper = styled.div`
   top: 220px;
   display: none;
   transform: translateX(-100px);
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.desktopAndUp} {
     display: block;
   }
   /* max-height: 200px; */
@@ -118,7 +124,7 @@ const BottomSectionImageWrapper = styled.div`
 const BottomSectionFakeWrapper = styled.div`
   flex: 1 300000 250px;
   display: none;
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     display: block;
   }
   /* max-width: 350px; */
@@ -127,15 +133,21 @@ const Text = styled.h6`
   font-weight: 400;
   font-size: ${18 / 16}rem;
   line-height: 35px;
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     line-height: 45px;
     font-size: ${24 / 16}rem;
   }
 
   ${TopSection} & {
-    flex: 1 0 350px;
+    flex: 1 0 auto;
+    @media ${p => p.theme.queries.laptopAndUp} {
+      flex: 1 0 350px;
+    }
   }
   ${BottomSection} & {
-    flex: 1 0 300px;
+    flex: 1 0 auto;
+    @media ${p => p.theme.queries.laptopAndUp} {
+      flex: 1 0 300px;
+    }
   }
 `;

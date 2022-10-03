@@ -41,7 +41,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     align-items: center;
   }
 `;
@@ -50,7 +50,10 @@ const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  flex: 1 0 340px;
+  /* flex: 1; */
+  @media ${p => p.theme.queries.tabletAndUp} {
+    flex: 1 0 340px;
+  }
 `;
 const RightColumn = styled.div`
   flex: 1 300000 350px;
@@ -60,10 +63,13 @@ const RightColumn = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 350px;
-  @media ${(p) => p.theme.queries.tabletAndUp} {
-    max-width: 400px;
+  @media ${p => p.theme.queries.tabletAndUp} {
+    max-width: 275px;
   }
-  @media ${(p) => p.theme.queries.desktopAndUp} {
+  @media ${p => p.theme.queries.laptopAndUp} {
+    max-width: 500px;
+  }
+  @media ${p => p.theme.queries.desktopAndUp} {
     max-width: none;
   }
 `;
@@ -72,7 +78,7 @@ const Title = styled.h1`
   font-size: ${32 / 16}rem;
   line-height: 40px;
 
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     font-size: ${48 / 16}rem;
     line-height: 60px;
   }
@@ -81,7 +87,7 @@ const Subtitle = styled.p`
   font-size: ${20 / 16}rem;
   line-height: 32px;
 
-  @media ${(p) => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.tabletAndUp} {
     font-size: ${24 / 16}rem;
     line-height: 32px;
   }
