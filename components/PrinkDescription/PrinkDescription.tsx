@@ -5,10 +5,20 @@ import MaxWidthWrapper from "../MaxWidthWrapper";
 import selfieGirl from "../../assets/girl-with-hat.jpg";
 import mirrorGirl from "../../assets/girl-with-mirror.jpg";
 import { PrinkDescriptionWrapper } from "./PrinkDescriptionWrapper";
+import Icon from "../Icon";
 
 const PrinkDescription = () => {
   return (
     <PrinkDescriptionWrapper>
+      <BowtieWrapper>
+        <Icon id="bowtie" size={150} color="white" />
+      </BowtieWrapper>
+      <LipstickWrapper>
+        <Icon id="lipstick" size={300} color="white" />
+      </LipstickWrapper>
+      <HighHeelWrapper>
+        <Icon id="high-heel" size={150} color="white" />
+      </HighHeelWrapper>
       <MaxWidthWrapper>
         <TopSection>
           <Text>
@@ -45,28 +55,6 @@ const PrinkDescription = () => {
           </Text>
           <BottomSectionFakeWrapper></BottomSectionFakeWrapper>
         </BottomSection>
-        {/* <LeftColumn>
-          <Text>
-            <Logo variant="white-colored" />
-            <span style={{ margin: "0 4px" }}></span>
-            is a new IOS app that will be launching this Year. It targets both
-            men and women who are interested in fashion and beauty through short
-            videos showing the styles of trendy clothes.
-          </Text>
-          <Text>
-            You would be able to record a video of your outfit, publish it, and
-            get feedback on it. You can also get many outfits inspirations.
-          </Text>
-        </LeftColumn>
-        <RightColumn>
-          <Image
-            layout="intrinsic"
-            src={selfieGirl}
-            width={526}
-            height={411}
-            alt="Girl taking a selfie infront of clothes"
-          />
-        </RightColumn> */}
       </MaxWidthWrapper>
     </PrinkDescriptionWrapper>
   );
@@ -90,12 +78,13 @@ const BottomSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 36px;
-  /* flex-wrap: wrap; */
   flex-direction: column;
+  @media ${p => p.theme.queries.tabletAndUp} {
+    gap: 36px;
+    margin-bottom: 0;
+  }
   @media ${p => p.theme.queries.laptopAndUp} {
     flex-direction: row;
-    margin-bottom: 0;
   }
 `;
 const TopSectionImageWrapper = styled.div`
@@ -122,12 +111,13 @@ const BottomSectionImageWrapper = styled.div`
   /* max-height: 200px; */
 `;
 const BottomSectionFakeWrapper = styled.div`
-  flex: 1 300000 250px;
   display: none;
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${p => p.theme.queries.laptopAndUp} {
     display: block;
   }
-  /* max-width: 350px; */
+  @media ${p => p.theme.queries.laptopAndUp} {
+    flex: 1 300000 250px;
+  }
 `;
 const Text = styled.h6`
   font-weight: 400;
@@ -149,5 +139,44 @@ const Text = styled.h6`
     @media ${p => p.theme.queries.laptopAndUp} {
       flex: 1 0 300px;
     }
+  }
+`;
+
+const BowtieWrapper = styled.div`
+  position: absolute;
+  left: 185px;
+  top: 40px;
+
+  @media ${p => p.theme.queries.laptopAndUp} {
+    left: 50%;
+    top: 50px;
+  }
+`;
+const LipstickWrapper = styled.div`
+  position: absolute;
+  left: 40px;
+  top: 475px;
+  transform: translateY(200px);
+  & svg {
+    width: 150px;
+    height: 150px;
+  }
+  @media ${p => p.theme.queries.laptopAndUp} {
+    & svg {
+      width: 300px;
+      height: 300px;
+    }
+    left: 200px;
+    top: 50%;
+    transform: translateY(0);
+  }
+`;
+const HighHeelWrapper = styled.div`
+  position: absolute;
+  right: 200px;
+  top: 350px;
+  display: none;
+  @media ${p => p.theme.queries.laptopAndUp} {
+    display: block;
   }
 `;
