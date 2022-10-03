@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import JoinUsForm from "../JoinUsForm";
 import MaxWidthWrapper from "../MaxWidthWrapper";
+import SocialLinks from "../SocialLinks";
 import { FooterWrapper } from "./FooterWrapper";
 
 const Footer = () => {
@@ -13,6 +14,8 @@ const Footer = () => {
           your e-mail to be the first to know when the app launches.
         </Subtitle>
         <JoinUsForm />
+        <Subtitle>Follow us on social media</Subtitle>
+        <SocialLinks />
       </MaxWidthWrapper>
     </FooterWrapper>
   );

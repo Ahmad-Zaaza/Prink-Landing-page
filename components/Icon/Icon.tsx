@@ -6,16 +6,24 @@
  */
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
+import Facebook from "./CustomIcons/Facebook";
 import Friends from "./CustomIcons/Friends";
+import Instagram from "./CustomIcons/Instagram";
 import Like from "./CustomIcons/Like";
+import LinkedIn from "./CustomIcons/LinkedIn";
 import SearchWithHeart from "./CustomIcons/SearchWithHeart";
 import TipsAndTricks from "./CustomIcons/TipsAndTricks";
+import Twitter from "./CustomIcons/Twitter";
 
 const icons = {
   "search-with-heart": SearchWithHeart,
   "tips-and-tricks": TipsAndTricks,
   like: Like,
   friends: Friends,
+  facebook: Facebook,
+  instagram: Instagram,
+  twitter: Twitter,
+  linkedin: LinkedIn,
 };
 
 export interface IconProps {
