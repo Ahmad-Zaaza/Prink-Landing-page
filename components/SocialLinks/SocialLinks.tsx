@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   gap: 24px;
   ${NavbarWrapper} & {
     display: none;
-    @media ${p => p.theme.queries.tabletAndUp} {
+    @media ${(p) => p.theme.queries.tabletAndUp} {
       display: inherit;
     }
   }
@@ -48,4 +48,13 @@ const SocialLink = styled.a.attrs(() => ({
   rel: "noreferrer noopener",
 }))`
   cursor: pointer;
+  transition: transform 180ms ease-in-out;
+  @media ${(p) => p.theme.queries.hoverPointerDevices} {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
 `;

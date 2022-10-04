@@ -70,7 +70,7 @@ const Background = styled.div`
     height: 508px;
   }
   @media ${(p) => p.theme.queries.desktopAndUp} {
-    transform: translateY(0px);
+    transform: translateY(-10px);
     height: 595px;
   }
 `;
