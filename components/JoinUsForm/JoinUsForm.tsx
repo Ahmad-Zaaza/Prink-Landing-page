@@ -58,6 +58,6 @@ const Button = styled.button`
   }
 `;
 const Subtitle = styled.p`
-  font-size: ${14 / 16}rem;
+  font-size: ${16 / 16}rem;
   color: var(--color-gray-700);
 `;

@@ -12,18 +12,18 @@ interface IProps {
 const SocialLinks = ({ iconSize = 25 }: IProps) => {
   return (
     <Wrapper>
-      <SocialLink href="https://facebook.com">
+      <SocialLink href="https://www.facebook.com/profile.php?id=100086028113619">
         <Icon size={iconSize} color="var(--color-secondary)" id="facebook" />
       </SocialLink>
-      <SocialLink href="https://instagram.com">
+      <SocialLink href="https://www.instagram.com/prink.official/">
         <Icon size={iconSize} color="var(--color-secondary)" id="instagram" />
       </SocialLink>
-      <SocialLink href="https://twitter.com">
+      <SocialLink href="https://twitter.com/LivePrink">
         <Icon size={iconSize} color="var(--color-secondary)" id="twitter" />
       </SocialLink>
-      <SocialLink href="https://linkedin.com">
+      {/* <SocialLink href="https://linkedin.com">
         <Icon size={iconSize} color="var(--color-secondary)" id="linkedin" />
-      </SocialLink>
+      </SocialLink> */}
     </Wrapper>
   );
 };
