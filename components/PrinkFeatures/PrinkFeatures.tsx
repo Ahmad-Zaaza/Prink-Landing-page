@@ -62,12 +62,16 @@ const Background = styled.div`
   background-image: url("./mobileBackground.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  transform: translateY(-160px);
+  transform: translateY(-210px);
   height: 600px;
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     background-image: url("./featuresBackground.svg");
-    transform: translateY(-40px);
-    height: 650px;
+    transform: translateY(-5px);
+    height: 508px;
+  }
+  @media ${(p) => p.theme.queries.desktopAndUp} {
+    transform: translateY(0px);
+    height: 595px;
   }
 `;
 const Title = styled.h2`
@@ -76,7 +80,7 @@ const Title = styled.h2`
   color: var(--color-on-secondary);
   text-align: center;
   margin-bottom: 24px;
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     font-size: ${40 / 16}rem;
     line-height: 60px;
   }
@@ -87,7 +91,7 @@ const Subtitle = styled.p`
   color: var(--color-on-secondary);
   text-align: center;
 
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     font-size: ${22 / 16}rem;
     line-height: 25px;
   }
@@ -99,7 +103,7 @@ const ContentWrapper = styled.div`
   margin-top: 120px;
   flex-direction: column;
 
-  @media ${p => p.theme.queries.desktopAndUp} {
+  @media ${(p) => p.theme.queries.desktopAndUp} {
     gap: 56px;
     align-items: center;
     flex-direction: row;
@@ -119,11 +123,11 @@ const RightColumn = styled.div`
   gap: 24px;
   align-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     gap: 48px;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
   }
-  @media ${p => p.theme.queries.desktopAndUp} {
+  @media ${(p) => p.theme.queries.desktopAndUp} {
     grid-template-columns: 1fr;
   }
 `;
