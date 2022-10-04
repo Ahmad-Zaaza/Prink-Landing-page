@@ -58,7 +58,14 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
 
 
 

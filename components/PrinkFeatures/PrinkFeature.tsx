@@ -23,7 +23,7 @@ const PrinkFeature = ({ iconId, subtitle, title }: FeatureProps) => {
 
 export default PrinkFeature;
 
-const Wrapper = styled.div`
+const Wrapper = styled.li`
   display: flex;
   gap: 16px;
   flex-direction: column;

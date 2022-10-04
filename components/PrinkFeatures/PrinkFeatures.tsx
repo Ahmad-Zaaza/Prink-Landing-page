@@ -116,7 +116,7 @@ const LeftColumn = styled.div`
   justify-content: center;
   flex: 1 0 350px;
 `;
-const RightColumn = styled.div`
+const RightColumn = styled.ul`
   flex: 1 0 350px;
   position: relative;
   display: grid;
