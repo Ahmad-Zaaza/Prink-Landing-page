@@ -1,13 +1,53 @@
-import React from "react";
+import axios from "axios";
+import { FormEventHandler, useState } from "react";
 import styled from "styled-components";
+import { emailRegex } from "../../lib/constants";
 
 const JoinUsForm = () => {
+  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [message, setMessage] = useState("");
+
+  const onSubmit: FormEventHandler = async event => {
+    event.preventDefault();
+    try {
+      setError("");
+      setIsLoading(true);
+      if (email.match(emailRegex)) {
+        const response = await axios.post(
+          "https://api.prink.live/api/store-email",
+          { email }
+        );
+        // console.log("passed");
+        setError("");
+        setMessage("");
+      } else {
+        setMessage("");
+        setError("Please enter a valid email");
+      }
+    } catch (error) {
+      setError("Something went wrong, Please try again");
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <div>
-      <Wrapper>
-        <Input placeholder="Email address" />
-        <Button>Join us</Button>
+      <Wrapper onSubmit={onSubmit}>
+        <Input
+          name="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="Email address"
+        />
+        <Button disabled={isLoading}>Join us</Button>
       </Wrapper>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {message && <SuccessMessage>{message}</SuccessMessage>}
       <Subtitle>Be the first to know when Prink is live.</Subtitle>
     </div>
   );
@@ -15,7 +55,7 @@ const JoinUsForm = () => {
 
 export default JoinUsForm;
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   display: flex;
   flex-wrap: wrap;
 `;
@@ -47,17 +87,43 @@ const Button = styled.button`
   cursor: pointer;
   text-align: center;
   transition: background-color 150ms ease;
-  &:hover {
-    background-color: var(--color-primary-hover);
+  &:disabled {
+    opacity: 0.4;
+    cursor: auto;
   }
+
+  @media ${p => p.theme.queries.hoverPointerDevices} {
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-hover);
+    }
+  }
+
   @media ${p => p.theme.queries.tabletAndUp} {
     flex: 1 1 200px;
   }
+
   @media ${p => p.theme.queries.laptopAndUp} {
     border-radius: 0;
   }
 `;
+
 const Subtitle = styled.p`
   font-size: ${16 / 16}rem;
   color: var(--color-gray-700);
+`;
+
+const Message = styled.span`
+  font-size: ${15 / 16}rem;
+  color: var(--color-error);
+  margin-top: -8px;
+  margin-bottom: 8px;
+  display: block;
+`;
+
+const SuccessMessage = styled(Message)`
+  color: var(--color-success);
+`;
+
+const ErrorMessage = styled(Message)`
+  color: var(--color-error);
 `;

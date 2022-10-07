@@ -78,3 +78,5 @@ export const ELEVATIONS = {
       0.5px 61px 79.2px -1.3px hsl(var(--shadow-color) / 0.3)
     `,
 };
+
+export const emailRegex = /^\w+([-.\+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/g;
