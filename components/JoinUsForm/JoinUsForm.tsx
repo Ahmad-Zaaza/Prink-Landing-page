@@ -17,13 +17,10 @@ const JoinUsForm = () => {
       setError("");
       setIsLoading(true);
       if (email.match(emailRegex)) {
-        const response = await axios.post(
-          "https://api.prink.live/api/store-email",
-          { email }
-        );
-        // console.log("passed");
+        await axios.post("https://api.prink.live/api/store-email", { email });
         setError("");
-        setMessage("");
+        setMessage("Thank you for joining our app!");
+        setEmail("");
       } else {
         setMessage("");
         setError("Please enter a valid email");
@@ -35,6 +32,7 @@ const JoinUsForm = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <div>
       <Wrapper onSubmit={onSubmit}>
