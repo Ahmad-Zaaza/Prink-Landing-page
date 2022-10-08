@@ -13,9 +13,19 @@ const Footer = () => {
           Seen enough ? We are currently in the development stage. Please enter
           your e-mail to be the first to know when the app launches.
         </Subtitle>
-        <JoinUsForm />
-        <Subtitle>Follow us on social media</Subtitle>
-        <SocialLinks />
+        <JoinUsForm buttonVariant="secondary" hideSubtitle />
+
+        <Subtitle>
+          For any suggestions please contact us on{" "}
+          <Email href="mailto://info@prink.live">info@prink.live</Email>
+        </Subtitle>
+
+        <div>
+          <Subtitle style={{ marginBottom: 20 }}>
+            Follow us on social media
+          </Subtitle>
+          <SocialLinks />
+        </div>
       </MaxWidthWrapper>
     </FooterWrapper>
   );
@@ -26,8 +36,22 @@ export default Footer;
 const Subtitle = styled.p`
   line-height: 25px;
   text-align: center;
+
   @media ${p => p.theme.queries.tabletAndUp} {
     font-size: ${20 / 16}rem;
     line-height: 30px;
+  }
+`;
+
+const Email = styled.a`
+  cursor: pointer;
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  @media ${p => p.theme.queries.hoverPointerDevices} {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;

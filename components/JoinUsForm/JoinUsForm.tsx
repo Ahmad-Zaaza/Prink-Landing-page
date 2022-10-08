@@ -1,9 +1,14 @@
 import axios from "axios";
 import { FormEventHandler, useState } from "react";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import { emailRegex } from "../../lib/constants";
 
-const JoinUsForm = () => {
+interface IProps {
+  hideSubtitle?: boolean;
+  buttonVariant?: "primary" | "secondary";
+}
+
+const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState("");
 
@@ -42,11 +47,29 @@ const JoinUsForm = () => {
           onChange={e => setEmail(e.target.value)}
           placeholder="Email address"
         />
-        <Button disabled={isLoading}>Join us</Button>
+        <Button
+          style={
+            {
+              "--color":
+                buttonVariant === "primary"
+                  ? "var(--color-on-primary)"
+                  : "var(--color-on-secondary)",
+              "--bg":
+                buttonVariant === "primary"
+                  ? "var(--color-primary)"
+                  : "var(--color-secondary)",
+            } as CSSProperties
+          }
+          disabled={isLoading}
+        >
+          Join us
+        </Button>
       </Wrapper>
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {message && <SuccessMessage>{message}</SuccessMessage>}
-      <Subtitle>Be the first to know when Prink is live.</Subtitle>
+      {!hideSubtitle && (
+        <Subtitle>Be the first to know when Prink is live.</Subtitle>
+      )}
     </div>
   );
 };
@@ -79,8 +102,8 @@ const Button = styled.button`
   font-size: ${20 / 16}rem;
   height: 50px;
   width: 100%;
-  background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  background-color: var(--bg);
+  color: var(--color);
   font-weight: 700;
   cursor: pointer;
   text-align: center;
