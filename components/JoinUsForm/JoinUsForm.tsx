@@ -31,8 +31,13 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
         setError("Please enter a valid email");
       }
     } catch (error) {
-      setError("Something went wrong, Please try again");
-      console.log(error);
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data.data.email) {
+          setError(error.response?.data.data.email[0]);
+        }
+      } else {
+        setError("Something went wrong, Please try again");
+      }
     } finally {
       setIsLoading(false);
     }
