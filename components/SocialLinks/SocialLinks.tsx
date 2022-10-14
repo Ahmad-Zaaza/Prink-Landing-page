@@ -21,9 +21,9 @@ const SocialLinks = ({ iconSize = 25 }: IProps) => {
       <SocialLink href="https://twitter.com/LivePrink">
         <Icon size={iconSize} color="var(--color-secondary)" id="twitter" />
       </SocialLink>
-      {/* <SocialLink href="https://linkedin.com">
+      <SocialLink href="https://www.linkedin.com/company/prink-short-video-platform/">
         <Icon size={iconSize} color="var(--color-secondary)" id="linkedin" />
-      </SocialLink> */}
+      </SocialLink>
     </Wrapper>
   );
 };
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   gap: 24px;
   ${NavbarWrapper} & {
     display: none;
-    @media ${(p) => p.theme.queries.tabletAndUp} {
+    @media ${p => p.theme.queries.tabletAndUp} {
       display: inherit;
     }
   }
@@ -49,7 +49,7 @@ const SocialLink = styled.a.attrs(() => ({
 }))`
   cursor: pointer;
   transition: transform 180ms ease-in-out;
-  @media ${(p) => p.theme.queries.hoverPointerDevices} {
+  @media ${p => p.theme.queries.hoverPointerDevices} {
     &:hover {
       transform: scale(1.1);
     }
