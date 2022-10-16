@@ -16,7 +16,7 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
 
   const [message, setMessage] = useState("");
 
-  const onSubmit: FormEventHandler = async event => {
+  const onSubmit: FormEventHandler = async (event) => {
     event.preventDefault();
     try {
       setError("");
@@ -34,6 +34,8 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
       if (axios.isAxiosError(error)) {
         if (error.response?.data.data.email) {
           setError(error.response?.data.data.email[0]);
+        } else {
+          setError("Something went wrong, Please try again");
         }
       } else {
         setError("Something went wrong, Please try again");
@@ -49,7 +51,7 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
         <Input
           name="email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
         />
         <Button
@@ -94,10 +96,10 @@ const Input = styled.input`
   width: 100%;
   border-radius: 6px;
   padding: 19px 20px 18px 20px;
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     flex: 1 1 300px;
   }
-  @media ${p => p.theme.queries.laptopAndUp} {
+  @media ${(p) => p.theme.queries.laptopAndUp} {
     border-radius: 0;
   }
 `;
@@ -118,17 +120,17 @@ const Button = styled.button`
     cursor: auto;
   }
 
-  @media ${p => p.theme.queries.hoverPointerDevices} {
+  @media ${(p) => p.theme.queries.hoverPointerDevices} {
     &:hover:not(:disabled) {
       background-color: var(--color-primary-hover);
     }
   }
 
-  @media ${p => p.theme.queries.tabletAndUp} {
+  @media ${(p) => p.theme.queries.tabletAndUp} {
     flex: 1 1 200px;
   }
 
-  @media ${p => p.theme.queries.laptopAndUp} {
+  @media ${(p) => p.theme.queries.laptopAndUp} {
     border-radius: 0;
   }
 `;
