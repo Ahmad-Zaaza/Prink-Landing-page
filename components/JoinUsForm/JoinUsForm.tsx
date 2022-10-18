@@ -21,6 +21,7 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
     try {
       setError("");
       setIsLoading(true);
+      setMessage("");
       if (email.match(emailRegex)) {
         await axios.post("https://api.prink.live/api/store-email", { email });
         setError("");
