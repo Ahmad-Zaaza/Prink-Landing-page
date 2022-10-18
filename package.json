@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next build && next export -o build/"
   },
   "dependencies": {
     "axios": "^1.1.2",
