@@ -2,6 +2,7 @@ import axios from "axios";
 import { FormEventHandler, useState } from "react";
 import styled, { CSSProperties } from "styled-components";
 import { emailRegex } from "../../lib/constants";
+import Input from "../Input";
 
 interface IProps {
   hideSubtitle?: boolean;
@@ -49,7 +50,7 @@ const JoinUsForm = ({ hideSubtitle, buttonVariant = "primary" }: IProps) => {
   return (
     <div>
       <Wrapper onSubmit={onSubmit}>
-        <Input
+        <TextInput
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -89,14 +90,9 @@ const Wrapper = styled.form`
   flex-wrap: wrap;
 `;
 
-const Input = styled.input`
-  border: 1px solid var(--color-border);
+const TextInput = styled(Input)`
   margin-bottom: 16px;
-  height: 50px;
-  min-width: 0;
-  width: 100%;
-  border-radius: 6px;
-  padding: 19px 20px 18px 20px;
+
   @media ${(p) => p.theme.queries.tabletAndUp} {
     flex: 1 1 300px;
   }
