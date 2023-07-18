@@ -9,7 +9,12 @@ const Navbar = () => {
   return (
     <MaxWidthWrapper>
       <NavbarWrapper>
-        <Logo size={100} withSubtitle variant="black-colored" />
+        <Logo
+          style={{ cursor: "pointer" }}
+          size={100}
+          withSubtitle
+          variant="black-colored"
+        />
         <SocialLinks />
       </NavbarWrapper>
     </MaxWidthWrapper>

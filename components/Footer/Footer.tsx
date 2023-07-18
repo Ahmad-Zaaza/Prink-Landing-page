@@ -5,8 +5,13 @@ import JoinUsForm from "../JoinUsForm";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import SocialLinks from "../SocialLinks";
 import { FooterWrapper } from "./FooterWrapper";
+import Link from "next/link";
 
-const Footer = () => {
+interface IProps {
+  hideForm?: boolean;
+}
+
+const Footer = ({ hideForm }: IProps) => {
   return (
     <FooterWrapper>
       <MaxWidthWrapper>
@@ -15,12 +20,15 @@ const Footer = () => {
           your e-mail to be the first to know when the app launches.
         </Subtitle> */}
         {/* <JoinUsForm buttonVariant="secondary" hideSubtitle /> */}
-        <Subtitle>
-          For any suggestions or feedback please contact us
-          {/* <Email href="mailto://info@prink.live">info@prink.live</Email> */}
-        </Subtitle>
-
-        <ContactForm />
+        {!hideForm && (
+          <>
+            <Subtitle>
+              For any suggestions or feedback please contact us
+              {/* <Email href="mailto://info@prink.live">info@prink.live</Email> */}
+            </Subtitle>
+            <ContactForm />
+          </>
+        )}
 
         <div>
           <Subtitle style={{ marginBottom: 20 }}>
@@ -28,6 +36,11 @@ const Footer = () => {
           </Subtitle>
           <SocialLinks />
         </div>
+        <Flex>
+          <Link href="/terms-and-conditions">Terms and Conditions</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/data-deletion-policy">Data Deletion Policy</Link>
+        </Flex>
       </MaxWidthWrapper>
     </FooterWrapper>
   );
@@ -56,4 +69,13 @@ const Email = styled.a`
       text-decoration: underline;
     }
   }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  flex-wrap: wrap;
 `;
