@@ -83,7 +83,7 @@ const Subtitle = styled.p<{ boldVariant?: boolean }>`
   line-height: 32px;
 
   @media ${(p) => p.theme.queries.tabletAndUp} {
-    font-size: ${16 / 16}rem;
+    font-size: ${18 / 16}rem;
     line-height: 32px;
   }
 
