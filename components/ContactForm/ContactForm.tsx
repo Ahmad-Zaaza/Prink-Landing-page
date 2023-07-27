@@ -13,17 +13,24 @@ type FormProps = {
 
 const ContactForm = () => {
   const [generalError, setGeneralError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const {
     register,
     handleSubmit,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormProps>();
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
+    setSuccessMessage("");
     try {
       setGeneralError("");
       await axios.post("https://api.prink.live/api/contact", data);
+      setSuccessMessage(
+        "Your message has been sent successfully, Thank you for contacting us!"
+      );
+      reset();
     } catch (error) {
       if (axios.isAxiosError(error)) {
         if (error.response?.data.data?.email) {
@@ -40,10 +47,11 @@ const ContactForm = () => {
       }
     }
   };
+
   return (
     <div>
       {/* <ContactUsText>Contact us</ContactUsText> */}
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Flex>
           <div>
             <Label>Name</Label>
@@ -89,16 +97,15 @@ const ContactForm = () => {
             } as CSSProperties
           }
         >
-          Submit
+          {isSubmitting ? "Sending..." : "Submit"}
         </Button>
-      </Form>
+      </form>
+      {successMessage && <Message>{successMessage}</Message>}
     </div>
   );
 };
 
 export default ContactForm;
-
-const Form = styled.form``;
 
 const Flex = styled.div`
   display: grid;
@@ -109,20 +116,21 @@ const Flex = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `;
-
 const Label = styled.label`
   font-size: ${16 / 16}rem;
   display: block;
   margin-bottom: 8px;
 `;
 const Message = styled.span`
-  font-size: ${15 / 16}rem;
-  color: var(--color-error);
+  font-size: ${16 / 16}rem;
+  text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
   display: block;
 `;
 const ErrorMessage = styled(Message)`
+  font-size: ${14 / 16}rem;
+  text-align: initial;
   color: var(--color-error);
 `;
 
