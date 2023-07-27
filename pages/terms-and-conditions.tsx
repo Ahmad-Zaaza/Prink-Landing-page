@@ -70,8 +70,46 @@ const TermsAndConditions = () => {
               <Subtitle boldVariant>App Permissions</Subtitle>
               <Subtitle>
                 By using the App, you grant us permission to access certain
-                features of your device, including but not limited to your
-                camera and microphone.
+                features of your device, including but not limited to:
+              </Subtitle>
+              <OrderedList>
+                <li>
+                  Camera: We need access to your device&apos;s camera to allow
+                  you to capture and upload fashion videos and images.
+                </li>
+                <li>
+                  Microphone: This permission enables you to record audio for
+                  your fashion videos and engage with the App&apos;s interactive
+                  features.
+                </li>
+                <li>
+                  Storage: We require access to your device&apos;s storage to
+                  save and retrieve fashion videos and images that you create or
+                  upload.
+                </li>
+                <li>
+                  Network and Internet: The App needs access to the internet to
+                  provide you with real-time updates, fetch fashion content, and
+                  enable social features.
+                </li>
+                <li>
+                  Location: Access to your device&apos;s location may be
+                  required to provide localized fashion content and personalized
+                  recommendations. However, this permission is optional and can
+                  be disabled at any time.
+                </li>
+                <li>
+                  Notifications: We may request permission to send you push
+                  notifications to keep you updated with the latest trends, app
+                  features, and community engagement. You have the option to
+                  manage your notification preferences in the App settings.
+                </li>
+              </OrderedList>
+              <Subtitle>
+                Please note that you have the right to revoke any of these
+                permissions at any time through your device settings. However,
+                disabling certain permissions may limit some of the App&apos;s
+                features and functionalities.
               </Subtitle>
             </li>
             <li>
@@ -174,14 +212,50 @@ const TermsAndConditions = () => {
                   the App or its content.
                 </li>
                 <li>
-                  We reserve the right to suspend or terminate your access to
-                  the App if you violate any of these restrictions.
+                  Malicious Activities: Any actions that could harm, disrupt, or
+                  impair the functionality, security, or integrity of the App or
+                  its user&apos;s data are strictly forbidden. This includes
+                  spreading viruses, malware, or engaging in any form of
+                  cyber-attacks
                 </li>
                 <li>
                   You are permitted to publish UGC as per fashion theme of the
                   App, any content that violate App&apos;s theme shall be taken
                   down / removed from the platform with or without prior
                   notification.
+                </li>
+                <li>
+                  Spam and Unauthorized Advertising: Users must not engage in
+                  spamming or send unsolicited messages, advertisements, or
+                  promotional content without proper authorization.
+                </li>
+                <li>
+                  Exploitation of Vulnerabilities: Users must not attempt to
+                  exploit any security vulnerabilities or weaknesses in the
+                  App&apos;s systems. If any vulnerabilities are discovered,
+                  they should be immediately reported to the App&apos;s
+                  administrators.
+                </li>
+                <li>
+                  Violation of Privacy: Users must respect the privacy of others
+                  and not share or distribute personal information of other
+                  users without their consent.
+                </li>
+                <li>
+                  Violation of Terms and Conditions: Failure to comply with
+                  these Restrictions & Prohibited Acts may result in the
+                  suspension or termination of your account and access to the
+                  App.
+                </li>
+                <li>
+                  We reserve the right to suspend or terminate your access to
+                  the App if you violate any of these restrictions. The App
+                  reserves the right to take appropriate action against any user
+                  found in violation of these restrictions, including reporting
+                  to the relevant authorities, as deemed necessary. By using the
+                  App, you agree to abide by these Restrictions & Prohibited
+                  Acts and understand that any violation may lead to severe
+                  consequences.
                 </li>
               </OrderedList>
             </li>
@@ -343,14 +417,14 @@ const Subtitle = styled.p<{ boldVariant?: boolean }>`
   line-height: 32px;
 
   @media ${(p) => p.theme.queries.tabletAndUp} {
-    font-size: ${16 / 16}rem;
+    font-size: ${18 / 16}rem;
     line-height: 32px;
   }
 
   ${(p) =>
     p.boldVariant &&
     css`
-      font-weight: 700 !important;
+      font-weight: 800 !important;
       @media ${(p) => p.theme.queries.tabletAndUp} {
         font-weight: unset;
       }

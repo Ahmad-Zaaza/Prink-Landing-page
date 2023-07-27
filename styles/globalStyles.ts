@@ -67,7 +67,10 @@ ul {
   padding-inline-start: 0;
 }
 
-
+ol li::marker {
+  font-size: 18px;
+  font-weight: 700;
+}
 
 /* CSS Variables */
 :root {
